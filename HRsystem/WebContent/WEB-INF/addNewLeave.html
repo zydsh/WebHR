@@ -1,0 +1,23 @@
+<html>
+    <link rel="stylesheet" type="text/css" href="http://localhost:8080/HRsystem/home/page/addEmployeeStyle"/>
+    <body>
+        <header>
+            <ul>
+                <li class="link"><a href="http://localhost:8080/HRsystem/home/page/web">Home</a></li>
+              </ul>
+        </header>
+        <div class="form">
+            <p class="bold">Add New Leave</p>
+            <form method="post" action="/HRsystem/home/page/saveNewLeave">
+                <p>Leave Name:</p>
+                <input type="text" name="Name"/>
+                <p>Number Of Allowed Days:</p>
+                <input type="text" name="num"/>
+                <div class="button-panel">
+                <input class="button" type="submit"/>
+                </div>
+            </form>
+        </div>
+        
+    </body>
+</html>

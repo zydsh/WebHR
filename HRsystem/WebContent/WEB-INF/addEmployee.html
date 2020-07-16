@@ -1,0 +1,25 @@
+<html>
+    <link rel="stylesheet" type="text/css" href="http://localhost:8080/HRsystem/home/page/addEmployeeStyle"/>
+    <body>
+        <header>
+            <ul>
+                <li class="link"><a href="http://localhost:8080/HRsystem/home/page/web">Home</a></li>
+              </ul>
+        </header>
+        <div class="form">
+            <p class="bold">Add Employee</p>
+            <form method="post" action="/HRsystem/home/page/saveEmployee">
+                <p>First Name:</p>
+                <input type="text" name="FName"/>
+                <p>Last Name:</p>
+                <input type="text" name="LName"/>
+                <p>National ID:</p>
+                <input type="text" name="NID"/>
+                <div class="button-panel">
+                <input class="button" type="submit"/>
+                </div>
+            </form>
+        </div>
+        
+    </body>
+</html>
