@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>hrm</name>
+	<comment></comment>
+	<projects>
+		<project>Authenticate</project>
+		<project>HRsystem</project>
+		<project>runtime</project>
+		<project>UIHR</project>
+	</projects>
+	<buildSpec>
+	</buildSpec>
+	<natures>
+		<nature>org.xtuml.bp.core.xtumlnature</nature>
+	</natures>
+</projectDescription>

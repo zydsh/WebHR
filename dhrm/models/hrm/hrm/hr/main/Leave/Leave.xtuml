@@ -1,0 +1,129 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("20eeccf9-a28c-4875-94f5-245affd4f878",
+	'Leave',
+	2,
+	'Leave',
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_TFR
+	VALUES ("95ff5b03-8893-4449-815a-a6d1369bf7bc",
+	"20eeccf9-a28c-4875-94f5-245affd4f878",
+	'createLeave',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	0,
+	'create object instance leave of Leave;
+	leave.Name = param.Name;
+	leave.NumberOfAllowedDays = param.NumberOfAllowedDays;
+ ',
+	1,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	0);
+INSERT INTO O_TPARM
+	VALUES ("64fc2d2e-d3ec-4803-87ce-4a2e237dd9b6",
+	"95ff5b03-8893-4449-815a-a6d1369bf7bc",
+	'Name',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("d1580ed6-e52b-42a7-a8ef-93942757c3be",
+	"95ff5b03-8893-4449-815a-a6d1369bf7bc",
+	'NumberOfAllowedDays',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"64fc2d2e-d3ec-4803-87ce-4a2e237dd9b6",
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("341aac1f-99da-4a6e-88bf-1f0c4d4c5241",
+	"20eeccf9-a28c-4875-94f5-245affd4f878");
+INSERT INTO O_BATTR
+	VALUES ("341aac1f-99da-4a6e-88bf-1f0c4d4c5241",
+	"20eeccf9-a28c-4875-94f5-245affd4f878");
+INSERT INTO O_ATTR
+	VALUES ("341aac1f-99da-4a6e-88bf-1f0c4d4c5241",
+	"20eeccf9-a28c-4875-94f5-245affd4f878",
+	"00000000-0000-0000-0000-000000000000",
+	'Name',
+	'',
+	'',
+	'Name',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("254dbf3c-543b-463a-ac9c-a6cadce254fc",
+	"20eeccf9-a28c-4875-94f5-245affd4f878");
+INSERT INTO O_BATTR
+	VALUES ("254dbf3c-543b-463a-ac9c-a6cadce254fc",
+	"20eeccf9-a28c-4875-94f5-245affd4f878");
+INSERT INTO O_ATTR
+	VALUES ("254dbf3c-543b-463a-ac9c-a6cadce254fc",
+	"20eeccf9-a28c-4875-94f5-245affd4f878",
+	"341aac1f-99da-4a6e-88bf-1f0c4d4c5241",
+	'NumberOfAllowedDays',
+	'',
+	'',
+	'NumberOfAllowedDays',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("d4eda1c1-2837-4bc2-a72f-560c003f5ac7",
+	"20eeccf9-a28c-4875-94f5-245affd4f878");
+INSERT INTO O_BATTR
+	VALUES ("d4eda1c1-2837-4bc2-a72f-560c003f5ac7",
+	"20eeccf9-a28c-4875-94f5-245affd4f878");
+INSERT INTO O_ATTR
+	VALUES ("d4eda1c1-2837-4bc2-a72f-560c003f5ac7",
+	"20eeccf9-a28c-4875-94f5-245affd4f878",
+	"254dbf3c-543b-463a-ac9c-a6cadce254fc",
+	'Leave_ID',
+	'',
+	'',
+	'Leave_ID',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"20eeccf9-a28c-4875-94f5-245affd4f878");
+INSERT INTO O_OIDA
+	VALUES ("d4eda1c1-2837-4bc2-a72f-560c003f5ac7",
+	"20eeccf9-a28c-4875-94f5-245affd4f878",
+	0,
+	'Leave_ID');
+INSERT INTO O_ID
+	VALUES (1,
+	"20eeccf9-a28c-4875-94f5-245affd4f878");
+INSERT INTO O_OIDA
+	VALUES ("341aac1f-99da-4a6e-88bf-1f0c4d4c5241",
+	"20eeccf9-a28c-4875-94f5-245affd4f878",
+	1,
+	'Name');
+INSERT INTO O_ID
+	VALUES (2,
+	"20eeccf9-a28c-4875-94f5-245affd4f878");
+INSERT INTO PE_PE
+	VALUES ("20eeccf9-a28c-4875-94f5-245affd4f878",
+	1,
+	"fdd8efa1-97d4-4adc-a67d-1fb0bd49373b",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("fdd8efa1-97d4-4adc-a67d-1fb0bd49373b",
+	"00000000-0000-0000-0000-000000000000",
+	"ccdb2e52-76fc-4422-936f-a0239fd9d106",
+	'main',
+	'',
+	0,
+	'../main.xtuml');
