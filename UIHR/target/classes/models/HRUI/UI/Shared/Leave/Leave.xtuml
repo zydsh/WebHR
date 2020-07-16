@@ -1,0 +1,196 @@
+-- BP 7.1.6 content: Interface syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO C_I
+	VALUES ("1db612f7-881a-4a30-adad-f3a35c05bb90",
+	"00000000-0000-0000-0000-000000000000",
+	'Leave',
+	'');
+INSERT INTO C_EP
+	VALUES ("1d101b95-2445-43c6-be97-23dade4e9158",
+	"1db612f7-881a-4a30-adad-f3a35c05bb90",
+	-1,
+	'New_Leave',
+	'//If there is no match for Leave, then create a new Leave.
+select any leave from instances of Leave where selected.Name==param.Name;
+if ( empty leave )
+	//create object instance employee of Employee;
+	leave.createLeave( Name:param.Name, NumberOfAllowedDays:param.NumberOfAllowedDays);
+	//generate Employee1:newEmployeeRcvd(FName:param.FName, LName:param.LName, National_ID:param.National_ID) to employee;
+	
+	UI::Reply( msg:"Leave created successfully.", state:True);
+else 
+	
+	LOG::LogInfo(message:"Leave already exists!" );
+	//LOG::LogInfo(message:"Updating details." );
+	//employee.FName = param.FName;
+	//employee.LName = param.LName;	
+	//UI::Reply( msg:"Employee already exists", state:False);
+end if;
+');
+INSERT INTO C_AS
+	VALUES ("1d101b95-2445-43c6-be97-23dade4e9158",
+	'New_Leave',
+	'//If there is no match for Leave, then create a new Leave.
+select any leave from instances of Leave where selected.Name==param.Name;
+if ( empty leave )
+	//create object instance employee of Employee;
+	leave.createLeave( Name:param.Name, NumberOfAllowedDays:param.NumberOfAllowedDays);
+	//generate Employee1:newEmployeeRcvd(FName:param.FName, LName:param.LName, National_ID:param.National_ID) to employee;
+	
+	UI::Reply( msg:"Leave created successfully.", state:True);
+else 
+	
+	LOG::LogInfo(message:"Leave already exists!" );
+	//LOG::LogInfo(message:"Updating details." );
+	//employee.FName = param.FName;
+	//employee.LName = param.LName;	
+	//UI::Reply( msg:"Employee already exists", state:False);
+end if;
+',
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_PP
+	VALUES ("4486f7bc-b5e3-443f-9b9f-26aee9d24628",
+	"1d101b95-2445-43c6-be97-23dade4e9158",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'Name',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_PP
+	VALUES ("6a5285ab-2df8-4cb1-8f16-c74d5204b943",
+	"1d101b95-2445-43c6-be97-23dade4e9158",
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'NumberOfAllowedDays',
+	'',
+	0,
+	'',
+	"4486f7bc-b5e3-443f-9b9f-26aee9d24628");
+INSERT INTO C_EP
+	VALUES ("5b22db55-b22f-4cc4-b387-b8ccbe203451",
+	"1db612f7-881a-4a30-adad-f3a35c05bb90",
+	-1,
+	'Request',
+	'//Select an employee using the National ID to deliver the event to the statemachine
+// to serve the request for leave.
+select any employee from instances of EM where selected.National_ID==param.National_ID;
+if ( not empty employee )
+	generate EM3:requestLeave(Starting:param.Starting, Ending:param.Ending, Name:param.Name, National_ID:param.National_ID) to employee;
+	UI::Reply( msg:"Employee has requested leave successfully ", state:True);
+
+else 
+	LOG::LogInfo(message:"Employee is not registered!" );
+	UI::Reply( msg:"Employee is not found.", state:False);
+end if;
+');
+INSERT INTO C_AS
+	VALUES ("5b22db55-b22f-4cc4-b387-b8ccbe203451",
+	'Request',
+	'//Select an employee using the National ID to deliver the event to the statemachine
+// to serve the request for leave.
+select any employee from instances of EM where selected.National_ID==param.National_ID;
+if ( not empty employee )
+	generate EM3:requestLeave(Starting:param.Starting, Ending:param.Ending, Name:param.Name, National_ID:param.National_ID) to employee;
+	UI::Reply( msg:"Employee has requested leave successfully ", state:True);
+
+else 
+	LOG::LogInfo(message:"Employee is not registered!" );
+	UI::Reply( msg:"Employee is not found.", state:False);
+end if;
+',
+	0,
+	"1d101b95-2445-43c6-be97-23dade4e9158");
+INSERT INTO C_PP
+	VALUES ("18d8d7c2-82ff-46b4-aea3-e7b9a01c4f24",
+	"5b22db55-b22f-4cc4-b387-b8ccbe203451",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'Starting',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_PP
+	VALUES ("f1d71294-f474-4b38-8169-a11b31de3b23",
+	"5b22db55-b22f-4cc4-b387-b8ccbe203451",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'Ending',
+	'',
+	0,
+	'',
+	"18d8d7c2-82ff-46b4-aea3-e7b9a01c4f24");
+INSERT INTO C_PP
+	VALUES ("6eecbb64-b4d6-4fce-a326-82a664e7b554",
+	"5b22db55-b22f-4cc4-b387-b8ccbe203451",
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'National_ID',
+	'',
+	0,
+	'',
+	"f1d71294-f474-4b38-8169-a11b31de3b23");
+INSERT INTO C_PP
+	VALUES ("815a7173-d36a-43e6-93af-3718eeb63755",
+	"5b22db55-b22f-4cc4-b387-b8ccbe203451",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'Name',
+	'Name/Type of leave ',
+	0,
+	'',
+	"6eecbb64-b4d6-4fce-a326-82a664e7b554");
+INSERT INTO C_EP
+	VALUES ("c1eca9ba-a0af-420b-af80-6d8c793ec1a3",
+	"1db612f7-881a-4a30-adad-f3a35c05bb90",
+	-1,
+	'Return',
+	'//Select an employee using the National ID to deliver the event to the statemachine
+// to serve the request for leave.
+select any employee from instances of EM where selected.National_ID==param.National_ID;
+if ( not empty employee )
+	generate EM4:returnFromLeave() to employee;
+	UI::Reply( msg:"Employee request is successfull ", state:True);
+
+else 
+	LOG::LogInfo(message:"Employee is not registered!" );
+	UI::Reply( msg:"Employee is not found.", state:False);
+end if;
+');
+INSERT INTO C_AS
+	VALUES ("c1eca9ba-a0af-420b-af80-6d8c793ec1a3",
+	'Return',
+	'//Select an employee using the National ID to deliver the event to the statemachine
+// to serve the request for leave.
+select any employee from instances of EM where selected.National_ID==param.National_ID;
+if ( not empty employee )
+	generate EM4:returnFromLeave() to employee;
+	UI::Reply( msg:"Employee request is successfull ", state:True);
+
+else 
+	LOG::LogInfo(message:"Employee is not registered!" );
+	UI::Reply( msg:"Employee is not found.", state:False);
+end if;
+',
+	0,
+	"5b22db55-b22f-4cc4-b387-b8ccbe203451");
+INSERT INTO C_PP
+	VALUES ("b0e3cd30-cb43-4e7c-b686-4f5249556389",
+	"c1eca9ba-a0af-420b-af80-6d8c793ec1a3",
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'National_ID',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO PE_PE
+	VALUES ("1db612f7-881a-4a30-adad-f3a35c05bb90",
+	1,
+	"941213f0-4346-48d9-89fe-196761630487",
+	"00000000-0000-0000-0000-000000000000",
+	6);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("941213f0-4346-48d9-89fe-196761630487",
+	"00000000-0000-0000-0000-000000000000",
+	"46564f98-385d-43d9-876a-ca551a77e802",
+	'Shared',
+	'',
+	0,
+	'../Shared.xtuml');

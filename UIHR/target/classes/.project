@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>HRUI</name>
+	<comment></comment>
+	<projects>
+		<project>Authenticate</project>
+		<project>dhrm</project>
+		<project>HRsystem</project>
+	</projects>
+	<buildSpec>
+	</buildSpec>
+	<natures>
+		<nature>org.xtuml.bp.core.xtumlnature</nature>
+	</natures>
+</projectDescription>
