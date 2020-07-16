@@ -1,0 +1,46 @@
+-- BP 7.1.6 content: Package syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO EP_PKG
+	VALUES ("3c95dc6c-5b11-4487-9b71-9d9519a2f1d0",
+	"7427f4f3-aab8-4438-96cd-9c2f2275d0a2",
+	"7427f4f3-aab8-4438-96cd-9c2f2275d0a2",
+	'security',
+	'',
+	0);
+INSERT INTO GD_MD
+	VALUES ("dea5935c-4114-4bd6-8c65-9227e18820bd",
+	112,
+	"3c95dc6c-5b11-4487-9b71-9d9519a2f1d0",
+	108,
+	0,
+	0,
+	1,
+	1,
+	1,
+	12,
+	1,
+	0,
+	0,
+	0,
+	0,
+	0,
+	'',
+	'Authenticate::security');
+INSERT INTO DIM_DIA
+	VALUES ("dea5935c-4114-4bd6-8c65-9227e18820bd",
+	'',
+	1.000000,
+	0.000000,
+	0.000000,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO PE_PE
+	VALUES ("3c95dc6c-5b11-4487-9b71-9d9519a2f1d0",
+	1,
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000",
+	7);
+INSERT INTO S_SYS_PROXY
+	VALUES ("7427f4f3-aab8-4438-96cd-9c2f2275d0a2",
+	'Authenticate',
+	1,
+	'../Authenticate.xtuml');
